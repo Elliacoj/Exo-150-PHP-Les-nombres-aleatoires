@@ -40,15 +40,10 @@ else {
 
 function random($min, $max) {
     $rand = rand($min, $max);
-    if(($rand <= $max) && ($rand >= ($max - 100))) {
-        random($min, $max);
+    if($rand >= ($max - 100)) {
+        return random($min, $max);
     }
     else {
         return $rand;
     }
 }
-
-
-
-
-
